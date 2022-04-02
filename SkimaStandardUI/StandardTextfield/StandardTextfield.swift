@@ -58,7 +58,7 @@ extension StandardTextfield: UITextFieldDelegate {
         if let text = textField.text,
            let variableId = props?.variableId {
             let newValue = (text as NSString).replacingCharacters(in: range, with: string)
-            DataEngine.shared.createOrModify(VariableModel(id: variableId, scope: widget.scope, type: "string", value: newValue), from: widget.scope)
+            DataEngine.shared.createOrModify(VariableModel(id: variableId, scopes: widget.scopes, type: "string", value: newValue), from: widget.scopes)
         }
         return true
     }

@@ -9,9 +9,9 @@ import Skima
 
 final class TextfieldManipulationData: WidgetManipulatorData {
     
-    override func execute(from scope: Scope?) {
+    override func execute(from scopes: [Scope]?) {
         guard let _widgetId = widgetId,
-              let widget = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scope) as? StandardTextfield
+              let widget = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scopes) as? StandardTextfield
         else { return }
         
         switch type {

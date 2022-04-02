@@ -57,7 +57,7 @@ public final class StandardCheckbox: UIView, UIWidget {
     }
     
     func activate() {
-        DataEngine.shared.createOrModify(VariableModel(id: props?.variableId, scope: widget.scope, type: "string", value: "true"), from: widget.scope)
+        DataEngine.shared.createOrModify(VariableModel(id: props?.variableId, scopes: widget.scopes, type: "string", value: "true"), from: widget.scopes)
         let img = UILabel()
         img.text = "✅"
         addSubview(img)
@@ -65,19 +65,19 @@ public final class StandardCheckbox: UIView, UIWidget {
     }
     
     func deactivate() {
-        DataEngine.shared.createOrModify(VariableModel(id: props?.variableId, scope: widget.scope, type: "string", value: "false"), from: widget.scope)
+        DataEngine.shared.createOrModify(VariableModel(id: props?.variableId, scopes: widget.scopes, type: "string", value: "false"), from: widget.scopes)
         subviews.forEach{ $0.removeFromSuperview() }
     }
     
     func toggle() {
         if let _variableId = props?.variableId,
-           let condition = DataEngine.shared.getValue(of: _variableId, from: widget.scope),
+           let condition = DataEngine.shared.getValue(of: _variableId, from: widget.scopes),
            condition == "false" {
             activate()
-            props?.onActivated?.execute(from: widget.scope)
+            props?.onActivated?.execute(from: widget.scopes)
         } else {
             deactivate()
-            props?.onDeactivated?.execute(from: widget.scope)
+            props?.onDeactivated?.execute(from: widget.scopes)
         }
     }
     

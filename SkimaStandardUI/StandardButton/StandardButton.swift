@@ -95,7 +95,7 @@ class StandardButton: UIButton, UIWidget {
     }
     
     @objc func onClick() {
-        props?.onClick?.execute(from: widget.scope)
+        props?.onClick?.execute(from: widget.scopes)
     }
     
     required init?(coder: NSCoder) {

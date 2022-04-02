@@ -9,9 +9,9 @@ import Skima
 
 final class LabelManipulationData: WidgetManipulatorData {
     
-    override func execute(from scope: Scope?) {
+    override func execute(from scopes: [Scope]?) {
         guard let _widgetId = widgetId,
-              let widget = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scope) as? StandardLabel
+              let widget = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scopes) as? StandardLabel
         else { return }
         
         switch type {
