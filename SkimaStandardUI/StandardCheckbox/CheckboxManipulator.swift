@@ -8,13 +8,21 @@
 import Skima
 
 final class CheckboxManipulationData: WidgetManipulatorData {
-
-    override func execute(from scopes: [Scope]?) {
+    var widgetId: String?
+    var type: String?
+    
+    func execute(from scopes: [Scope]?) {
         guard let _widgetId = widgetId,
-              let _ = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scopes) as? StandardCheckbox
+              let _widget = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scopes) as? StandardCheckbox
         else { return }
         
         switch type {
+        case "activate":
+            _widget.activate()
+        case "deactivate":
+            _widget.deactivate()
+        case "toggle":
+            _widget.toggle()
         default:
             break
         }

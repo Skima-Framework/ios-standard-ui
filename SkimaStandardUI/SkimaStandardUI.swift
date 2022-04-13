@@ -13,6 +13,9 @@ public class SkimaStandardUI: UIModule {
         WidgetSchema(type: "button", view: StandardButton.self, props: ButtonProps.self),
         WidgetSchema(type: "image", view: StandardImageView.self, props: ImageProps.self),
         WidgetSchema(type: "textfield", view: StandardTextfield.self, props: TextfieldProps.self),
-        WidgetSchema(type: "checkbox", view: StandardCheckbox.self, props: CheckboxProps.self)
+        WidgetSchema(type: "checkbox", view: StandardCheckbox.self, props: CheckboxProps.self),
+        WidgetSchema(type: "container", view: StandardContainer.self, props: ContainerProps.self),
+        WidgetSchema(type: "stack", view: StandardStack.self, props: StackProps.self),
+        WidgetSchema(type: "scrollview", view: StandardScrollView.self, props: ScrollViewProps.self)
     ]
 }
