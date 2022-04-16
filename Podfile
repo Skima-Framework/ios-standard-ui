@@ -6,6 +6,6 @@ use_frameworks!
 
 target 'SkimaStandardUITestApp' do
   pod 'SkimaStandardUI', :path => './'
-  pod 'Skima', :path => '/Users/joaquinbozalla/Desktop/myProjects/Skima'
+  pod 'Skima'
 
 end

@@ -24,7 +24,7 @@ final class StackManipulationData: WidgetManipulatorData {
     
     func execute(from scopes: [Scope]?) {
         guard let _widgetId = widgetId,
-              let widget = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scopes) as? StandardStack
+              let _ = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scopes) as? StandardStack
         else { return }
         
         switch type {

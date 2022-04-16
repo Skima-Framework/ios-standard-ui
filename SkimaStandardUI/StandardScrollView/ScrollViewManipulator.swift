@@ -24,7 +24,7 @@ final class ScrollViewManipulationData: WidgetManipulatorData {
     
     func execute(from scopes: [Scope]?) {
         guard let _widgetId = widgetId,
-              let widget = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scopes) as? StandardScrollView
+              let _ = WidgetsEngine.shared.getWidgetBy(id: _widgetId, from: scopes) as? StandardScrollView
         else { return }
         
         switch type {
