@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
     s.name                  = 'SkimaStandardUI'
     s.version               = '0.1.0'
-    s.homepage              = 'www.google.com'
+    s.homepage              = 'https://github.com/Skima-Framework/ios-standard-ui'
     s.summary               = 'Skima Standard UI - module'
-    s.license               = { :type => 'MIT', :file => 'LICENSE.txt' }
+    s.license               = { :type => 'AGPL-3.0', :file => 'LICENSE' }
     s.author                = 'Skima Framework'
-    s.source                = { :path => '/Users/joaquinbozalla/Desktop/myProjects/SkimaStandardUI' }
+    s.source                = { :git => 'https://github.com/Skima-Framework/ios-standard-ui.git', :tag => s.version.to_s }
     
     s.platform              = :ios, '11.0'
     s.requires_arc          = true
